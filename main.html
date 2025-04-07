@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPG Signal Extraction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/papaparse/5.3.0/papaparse.min.js"></script>
+    <script async src="https://docs.opencv.org/4.x/opencv.js"></script>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md text-center">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Smartphone-Based PPG Signal Extraction</h2>
+
+        <video id="video" autoplay playsinline class="w-full border-2 border-gray-700 rounded-md"></video>
+
+        <button id="startBtn" class="mt-4 px-6 py-2 bg-green-600 text-white text-lg rounded-lg hover:bg-green-700">
+            Start Recording
+        </button>
+
+        <p id="status" class="mt-2 text-gray-600"></p>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-6 mt-6 w-full max-w-md">
+        <h3 class="text-xl font-semibold text-gray-700 mb-2">Extracted PPG Data</h3>
+        <pre id="ppgData" class="text-sm text-gray-600 overflow-auto h-24 bg-gray-200 p-2 rounded-md"></pre>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-6 mt-6 w-full max-w-md">
+        <h3 class="text-xl font-semibold text-gray-700 mb-2">Filtered PPG Signal</h3>
+        <canvas id="plotCanvas"></canvas>
+    </div>
+
+    <script src="./script/camera.js"></script>  <!-- JavaScript file -->
+</body>
+</html>
