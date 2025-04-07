@@ -66,6 +66,7 @@ function processVideoFrames(stream) {
             }
 
             let avgRed = totalRed / pixelCount;
+            avgRed = parseFloat(avgRed.toFixed(2));
             rawPPG.push(avgRed);
 
             ppgDataElement.innerText = rawPPG.join(", ");
